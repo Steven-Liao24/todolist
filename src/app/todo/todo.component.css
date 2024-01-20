@@ -1,0 +1,71 @@
+/* todo.component.css */
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css');
+
+.todo-block {
+  min-height: 400px;
+  background: #fff;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #00000052;
+}
+
+.todo-header {
+  background: #00BCD4;
+  padding: 10px;
+  border-radius: 7px;
+  color: #ffffff; /* 假设标题文字是白色的 */
+  font-size: 24px; /* 标题文字大小 */
+  text-align: center; /* 标题居中 */
+}
+
+.todo-input {
+  margin-right: 10px;
+  padding: 7px;
+  border: 1px solid #cccccc; /* 输入框边框 */
+  border-radius: 4px; /* 输入框圆角 */
+  width: calc(100% - 22px); /* 输入框宽度，减去边距和边框 */
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 5px;
+}
+
+.todo-item .text {
+  flex-grow: 1; /* 让待办事项的文本占据大部分空间 */
+}
+
+.todo-item .delete {
+  color: #ff0000; /* 删除按钮的颜色 */
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+/* 假设您的HTML中有一个用于添加待办事项的按钮 */
+.add-todo-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #00BCD4; /* 按钮背景颜色 */
+  color: #ffffff; /* 按钮文字颜色 */
+  border: none;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer; /* 鼠标悬停时显示为指针 */
+}
+
+/* 鼠标悬停在按钮上时的样式 */
+.add-todo-btn:hover {
+  background-color: #0097A7; /* 按钮背景颜色加深 */
+}
+
+/* 适配删除图标的样式 */
+.bi-trash {
+  font-size: 1.2em; /* 图标大小 */
+}
