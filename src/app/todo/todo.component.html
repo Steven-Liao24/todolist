@@ -1,22 +1,60 @@
-<div class="todo-block">
-    <div class="todo-header">
-      <h4>Todo List</h4>
-    </div>
-    
-    <!-- 输入框用于新增待办事项 -->
-    <input type="text" class="todo-input" placeholder="Add new todo...">
-  
-    <!-- 添加按钮 -->
-    <button class="add-todo-btn">Add</button>
-  
-    <!-- 待办事项列表 -->
-    <div class="todo-list">
-      <!-- 示例待办事项 -->
-      <div class="todo-item">
-        <span class="text">Learn Angular</span>
-        <i class="bi bi-trash delete"></i>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-4 todo-block">
+        <h4 class="text-center mb-3 todo-header">Todo List</h4>
+        <div class="row">
+          <div class="col-9">
+            <input class="form-control todo-input" placeholder="Enter text..." type="text" name="text" [(ngModel)]="todoValue">
+          </div>
+          <div class="col-3 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary me-0" (click) = "addTodo()">Add</button>
+          </div>
+        </div>
+         <div class = "todo-list mt-3">
+            <h5>Todo List</h5>
+            <div class = "col-12 d-flex todo-single align-items-center" *ngFor = "let todo of todoList; let i = index">
+                <input type = "checkbox" class = "col-1 todo-checkbox" [(ngModel)] = "todo.value" (ngModelChange) = "changeTodo(i)">
+                <p class = "col-9">{{todo.content}}</p>
+                <button type = "button" class = "btn btn-outline-light text-danger col-1 del-btn" (click) = "openModal(content, i, 'todoList')">
+                    <i class = "bi bi-trash3"></i>
+                </button>
+            </div>
+         </div>
+         <div class = "todo-list mt-3" *ngIf = "finishedList.length > 0">
+            <h5>Finished List</h5>
+            <div class = "col-12 d-flex todo-single align-items-center" *ngFor = "let todo of finishedList; let i = index">
+                <input type = "checkbox" class = "col-1 todo-checkbox" [(ngModel)] = "todo.value" (ngModelChange) = "changeFinished(i)">
+                <p class = "col-9">{{todo.content}}</p>
+                <button type = "button" class = "btn btn-outline-light text-danger col-1 del-btn"(click) = "openModal(content, i, 'finishedList')">
+                <i class = "bi bi-trash3"></i>
+                </button>
+            </div>
+         </div>
       </div>
-      <!-- 你可以重复 todo-item 来添加更多待办事项 -->
     </div>
   </div>
-  
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Delete</h4>
+        <button
+            type="button"
+            class="btn-close"
+            aria-describedby="modal-title"
+            (click)="modal.dismiss('Cross click')"
+        ></button>
+    </div>
+    <div class="modal-body">
+        <p>
+            Are you sure you want to delete?
+        </p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" (click)="modal.dismiss('cancel click')">Cancel</button>
+        <button type="button" class="btn btn-danger" (click)="modal.close('Ok click')">Ok</button>
+    </div>
+</ng-template>
+
+
+
+

@@ -3,6 +3,7 @@
 
 .todo-block {
   min-height: 400px;
+  width: 180%;
   background: #fff;
   margin: 20px 0;
   padding: 10px;
@@ -11,7 +12,7 @@
 }
 
 .todo-header {
-  background: #00BCD4;
+  background: #0c73ea;
   padding: 10px;
   border-radius: 7px;
   color: #ffffff; /* 假设标题文字是白色的 */
