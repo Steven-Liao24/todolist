@@ -1,6 +1,7 @@
 # Todolist
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+<img width="350" alt="9e8cf3ddabd62ea037c4b33cd6e15dc" src="https://github.com/Steven-Liao24/todolist/assets/151792087/fe5b3f4a-b989-4829-a5cb-482dcebf4576">
 
 ## Development server
 
